@@ -42,3 +42,26 @@ void Cliente::vaciarCarrito() {
 const Carrito& Cliente::getCarrito() const {
     return carrito;
 }
+
+// Finalizar compra
+bool Cliente::finalizarCompra() {
+    if (carrito.getProductos().empty()) {
+        std::cout << "El carrito esta vacio.\n";
+        return false;
+    }
+
+    double total = carrito.calcularTotal();
+
+    if (saldo < total) {
+        std::cout << "Saldo insuficiente para realizar la compra.\n";
+        return false;
+    }
+
+    mostrarResumenCompra(carrito);
+    saldo -= total;
+    carrito.vaciar();
+
+    std::cout << "Compra realizada.\n";
+    std::cout << "Saldo restante: S/ " << saldo << '\n';
+    return true;
+}

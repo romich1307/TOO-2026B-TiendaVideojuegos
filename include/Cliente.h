@@ -21,6 +21,7 @@ public:
     void quitarDelCarrito(const Videojuego& juego);
     void vaciarCarrito();
     const Carrito& getCarrito() const;
+    bool finalizarCompra();
 };
 
 #endif
