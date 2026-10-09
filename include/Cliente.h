@@ -16,6 +16,11 @@ public:
     std::string getNombre() const;
     double getSaldo() const;
     void mostrarDatos() const;
+
+    void agregarAlCarrito(const Videojuego& juego);
+    void quitarDelCarrito(const Videojuego& juego);
+    void vaciarCarrito();
+    const Carrito& getCarrito() const;
 };
 
 #endif

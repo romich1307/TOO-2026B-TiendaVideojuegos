@@ -22,3 +22,23 @@ void Cliente::mostrarDatos() const {
     std::cout << "Nombre: " << nombre << '\n';
     std::cout << "Saldo: S/ " << saldo << '\n';
 }
+
+// Agregar juego
+void Cliente::agregarAlCarrito(const Videojuego& juego) {
+    carrito += juego;
+}
+
+// Quitar juego
+void Cliente::quitarDelCarrito(const Videojuego& juego) {
+    carrito -= juego;
+}
+
+// Vaciar carrito
+void Cliente::vaciarCarrito() {
+    carrito.vaciar();
+}
+
+// Consultar carrito
+const Carrito& Cliente::getCarrito() const {
+    return carrito;
+}
